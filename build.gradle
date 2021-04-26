@@ -1,0 +1,72 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.versions = [
+            kotlin_version     : "1.4.32",
+            androidx_ktx       : "1.3.2",
+            androidx_appcompat : "1.2.0",
+            androidx_lifecycle : "2.2.0",
+            androidx_constraint: "2.0.4",
+            androidx_espresso  : "3.3.0",
+            androidx_junit     : "1.1.2",
+            moshi              : "1.12.0",
+            okhttp             : "4.9.1",
+            material           : "1.3.0",
+            rx_java            : "3.0.0",
+            rx_android         : "3.0.0",
+            dagger             : "2.35",
+            retrofit           : "2.9.0",
+            threeTen           : "1.3.1",
+            timber             : "4.7.1",
+            glide              : "4.12.0",
+            junit              : "4.13.2",
+    ]
+    ext.deps = [
+            kotlin  : "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin_version}",
+            androidx: [
+                    ktx       : "androidx.core:core-ktx:${versions.androidx_ktx}",
+                    appCompat : "androidx.appcompat:appcompat:${versions.androidx_appcompat}",
+                    constraint: "androidx.constraintlayout:constraintlayout:${versions.androidx_constraint}",
+                    lifecycle : "androidx.lifecycle:lifecycle-extensions:${versions.androidx_lifecycle}",
+                    junit     : "androidx.test.ext:junit:${versions.androidx_junit}",
+                    espresso  : "androidx.test.espresso:espresso-core:${versions.androidx_espresso}"
+            ],
+            material: "com.google.android.material:material:${versions.material}",
+            retrofit: "com.squareup.retrofit2:retrofit:${versions.retrofit}",
+            okhttp  : "com.squareup.okhttp3:okhttp:${versions.okhttp}",
+            moshi   : [
+                    kotlin       : "com.squareup.moshi:moshi-kotlin:${versions.moshi}",
+                    kotlinCodegen: "com.squareup.moshi:moshi-kotlin-codegen:${versions.moshi}"
+            ],
+            rx      : [
+                    rxJava   : "io.reactivex.rxjava3:rxjava:${versions.rx_java}",
+                    rxAndroid: "io.reactivex.rxjava3:rxandroid:${versions.rx_android}"
+            ],
+            dagger  : [
+                    dagger  : "com.google.dagger:dagger:${versions.dagger}",
+                    compiler: "com.google.dagger:dagger-compiler:${versions.dagger}"
+            ],
+            threeTen: "com.jakewharton.threetenabp:threetenabp:${versions.threeTen}",
+            timber  : "com.jakewharton.timber:timber:${versions.timber}",
+            glide   : "com.github.bumptech.glide:glide:${versions.glide}",
+            junit   : "junit:junit:${versions.junit}"
+    ]
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.0-rc01"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin_version}"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
